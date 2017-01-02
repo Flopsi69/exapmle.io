@@ -1,0 +1,135 @@
+body {
+  background-color: #252830;
+  color: white;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  color: white;
+}
+
+.btn {
+  cursor: pointer;
+  border: 1px solid transparent;
+  border-radius: 30px;
+  font-size: 18px;
+  outline: none !important;
+  background: #282828;
+  color: white;
+  padding: 15px 50px;
+}
+
+/* Nav */
+.logo {
+  display: block;
+  padding: 20px 0;
+  font-size: 18px;
+  text-align: center;
+  background-color: #0f1013;
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 70px;
+  background-color: #30343e;
+}
+.navbar .nav {
+  text-align: center;
+}
+.navbar .nav li {
+  position: relative;
+  border-top: 1px solid #252830;
+}
+.navbar .nav li:hover .icon-info {
+  display: block;
+}
+.navbar .nav li.active {
+  background: #252830;
+}
+.navbar .nav li .icon-info {
+  position: absolute;
+  display: none;
+  text-align: left;
+  width: 100px;
+  top: 20px;
+  right: -120px;
+  bottom: 0;
+}
+.navbar .nav li a {
+  display: block;
+  padding: 20px 0;
+}
+
+/* Main part */
+.wrap {
+  position: relative;
+  width: 1200px;
+  padding-top: 50px;
+  max-width: 100%;
+  padding-left: 85px;
+  padding-right: 15px;
+  margin: auto;
+  box-sizing: border-box;
+}
+
+/* List of Games */
+.list-games {
+  text-align: center;
+}
+.list-games > li {
+  position: relative;
+  display: inline-block;
+  vertical-align: top;
+  width: 33%;
+}
+.list-games > li .circle {
+  position: relative;
+}
+.list-games > li .circle strong {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 40%;
+  font-size: 38px;
+  font-family: PTSansBold, sans-serif;
+  background: -webkit-linear-gradient(#d22b1f, #f89b2d);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.list-games > li .game-description {
+  margin-top: 40px;
+  padding: 25px;
+  border: 3px solid #212020;
+  -webkit-transition: all 1s;
+  -moz-transition: all 1s;
+  -o-transition: all 1s;
+  transition: all 1s;
+}
+.list-games > li .game-description:hover {
+  position: relative;
+  z-index: 2;
+  -moz-transform: scale(1.05);
+  -ms-transform: scale(1.05);
+  -webkit-transform: scale(1.05);
+  -o-transform: scale(1.05);
+  transform: scale(1.05);
+  border-image-source: linear-gradient(to right bottom, yellow, green);
+  border-image-slice: 1;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+.list-games > li .game-description:hover .btn {
+  background: linear-gradient(to bottom right, green, yellow);
+}
+.list-games > li .game-description:hover .btn:hover {
+  background: linear-gradient(to bottom right, greenyellow, yellowgreen);
+}
+
+/* Media */
