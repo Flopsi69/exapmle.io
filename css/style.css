@@ -13,6 +13,14 @@ a {
   color: white;
 }
 
+h1 {
+  text-align: center;
+  background: -webkit-linear-gradient(green, yellow);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 50px;
+}
+
 .btn {
   cursor: pointer;
   border: 1px solid transparent;
@@ -22,6 +30,10 @@ a {
   background: #282828;
   color: white;
   padding: 15px 50px;
+  -webkit-transition: all 1s;
+  -moz-transition: all 1s;
+  -o-transition: all 1s;
+  transition: all 1s;
 }
 
 /* Nav */
@@ -40,6 +52,7 @@ a {
   left: 0;
   width: 70px;
   background-color: #30343e;
+  z-index: 2;
 }
 .navbar .nav {
   text-align: center;
@@ -68,6 +81,12 @@ a {
   padding: 20px 0;
 }
 
+/* Particles */
+.particles-js-canvas-el {
+  position: fixed;
+  top: 0;
+}
+
 /* Main part */
 .wrap {
   position: relative;
@@ -78,6 +97,8 @@ a {
   padding-right: 15px;
   margin: auto;
   box-sizing: border-box;
+  background: #262630;
+  z-index: 2;
 }
 
 /* List of Games */
@@ -90,6 +111,13 @@ a {
   vertical-align: top;
   width: 33%;
 }
+.list-games > li h2 {
+  text-transform: uppercase;
+  margin-bottom: 40px;
+  background: -webkit-linear-gradient(yellow, green);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
 .list-games > li .circle {
   position: relative;
 }
@@ -99,7 +127,6 @@ a {
   right: 0;
   top: 40%;
   font-size: 38px;
-  font-family: PTSansBold, sans-serif;
   background: -webkit-linear-gradient(#d22b1f, #f89b2d);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -112,6 +139,9 @@ a {
   -moz-transition: all 1s;
   -o-transition: all 1s;
   transition: all 1s;
+}
+.list-games > li .game-description p {
+  line-height: 25px;
 }
 .list-games > li .game-description:hover {
   position: relative;
@@ -129,7 +159,7 @@ a {
   background: linear-gradient(to bottom right, green, yellow);
 }
 .list-games > li .game-description:hover .btn:hover {
-  background: linear-gradient(to bottom right, greenyellow, yellowgreen);
+  background: linear-gradient(to bottom right, #c2172f, #1318be);
 }
 
 /* Media */
