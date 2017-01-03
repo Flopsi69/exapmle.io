@@ -1,7 +1,7 @@
 $black : #252830;
 
 body {
-  background-color: $black;
+  background-color: #1c1d21;
   color: white;
 } 
 
@@ -21,6 +21,11 @@ h1 {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   margin-bottom: 50px;
+  font-size: 3em;
+}
+
+.text-center {
+  text-align: center;
 }
 
 .btn {
@@ -33,9 +38,9 @@ h1 {
   color: white;
   padding: 15px 50px;
   -webkit-transition: all 1s ;
-      -moz-transition: all 1s ;
-      -o-transition: all 1s ;
-      transition: all 1s ;
+  -moz-transition: all 1s ;
+  -o-transition: all 1s ;
+  transition: all 1s ;
 }
 
 /* Nav */
@@ -64,6 +69,10 @@ h1 {
       &:hover {
         .icon-info {
           display: block;
+          border: 3px solid;
+          background: rgba(38, 38, 48, 0.68);
+          border-image-source: linear-gradient(to right bottom, yellow, green);
+          border-image-slice: 1;
         }
       }
       &.active {
@@ -72,11 +81,20 @@ h1 {
       .icon-info {
         position: absolute;
         display: none;
-        text-align: left;
+        font-weight: bold;
+        font-style: italic;
+        padding: 7px 0;
         width: 100px;
-        top: 20px;
+        top: 12px;
         right: -120px;
-        bottom: 0;
+        // bottom: 0;
+        &:before {
+          content: ''; 
+          position: absolute;
+          left: -21px;
+          border: 10px solid transparent;
+          border-right: 10px solid greenyellow;
+        }
       }
       a {
         display: block;
@@ -97,19 +115,21 @@ h1 {
 .wrap {
   position: relative;
   width: 1200px;
-  padding-top: 50px;
+  padding: 30px 25px 110px 25px;
   max-width: 100%;
-  padding-left: 85px;
-  padding-right: 15px;
+  left: 70px;
   margin: auto;
   box-sizing: border-box;
-  background: #262630;
+  background: rgba(38, 38, 48, 0.68);;
   z-index: 2;
 }
 
 /* List of Games */
 .list-games {
   text-align: center;
+  li:nth-child(odd) {
+    margin-top: 50px;
+  }
   &>li {
     position: relative;
     display: inline-block;
@@ -118,9 +138,9 @@ h1 {
     h2 {
       text-transform: uppercase;
       margin-bottom: 40px;
-        background: -webkit-linear-gradient(yellow, green);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
+      background: -webkit-linear-gradient(yellow, green);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
     .circle {
       position: relative;
@@ -146,6 +166,14 @@ h1 {
       p {
         line-height: 25px;
       }
+      .btn {
+        background: -webkit-linear-gradient( green, yellow );
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        font-weight: bold;
+        border: 2px solid greenyellow;
+        color: black;
+      }
       &:hover {
         position: relative;
         z-index: 2;
@@ -159,6 +187,8 @@ h1 {
         background-color: rgba(0, 0, 0, 0.8);
         .btn {
           background: linear-gradient(to bottom right, green, yellow);
+          
+          -webkit-text-fill-color: inherit;
           &:hover {
             background: linear-gradient(to bottom right, rgb(194, 23, 47), #1318be);
           }
@@ -166,6 +196,43 @@ h1 {
       }
     }
   }
+}
+
+/* RouleTTe */
+
+.statistic {
+  @extend .list-games;
+  li:nth-child(odd) {
+    margin-top: 50px;
+  }
+}
+
+.live-line {
+  border: 2px solid #30343e;
+  border-image-source: linear-gradient(to right, yellow, green);
+  border-image-slice: 1;
+  background: rgba(0, 0, 0, 0.22);
+  h3 {
+    border: 3px solid black;
+    letter-spacing: 4px;
+    -moz-transform: rotate(180deg);
+    -webkit-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    transform: rotate(180deg);
+    writing-mode: tb-rl;
+    margin: 0;
+    border-image-source: linear-gradient(to right bottom, yellow, red);
+    border-image-slice: 1;
+    padding: 30px 5px;
+  }
+}
+
+/* Footer */
+.footer {
+  position: relative;
+  padding: 50px 85px;
+  background: #30343e;
+  z-index: 2;
 }
 
 /* Media */

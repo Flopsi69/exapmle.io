@@ -1,5 +1,5 @@
 body {
-  background-color: #252830;
+  background-color: #1c1d21;
   color: white;
 }
 
@@ -19,6 +19,11 @@ h1 {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   margin-bottom: 50px;
+  font-size: 3em;
+}
+
+.text-center {
+  text-align: center;
 }
 
 .btn {
@@ -63,6 +68,10 @@ h1 {
 }
 .navbar .nav li:hover .icon-info {
   display: block;
+  border: 3px solid;
+  background: rgba(38, 38, 48, 0.68);
+  border-image-source: linear-gradient(to right bottom, yellow, green);
+  border-image-slice: 1;
 }
 .navbar .nav li.active {
   background: #252830;
@@ -70,11 +79,19 @@ h1 {
 .navbar .nav li .icon-info {
   position: absolute;
   display: none;
-  text-align: left;
+  font-weight: bold;
+  font-style: italic;
+  padding: 7px 0;
   width: 100px;
-  top: 20px;
+  top: 12px;
   right: -120px;
-  bottom: 0;
+}
+.navbar .nav li .icon-info:before {
+  content: '';
+  position: absolute;
+  left: -21px;
+  border: 10px solid transparent;
+  border-right: 10px solid greenyellow;
 }
 .navbar .nav li a {
   display: block;
@@ -91,37 +108,39 @@ h1 {
 .wrap {
   position: relative;
   width: 1200px;
-  padding-top: 50px;
+  padding: 30px 25px 110px 25px;
   max-width: 100%;
-  padding-left: 85px;
-  padding-right: 15px;
+  left: 70px;
   margin: auto;
   box-sizing: border-box;
-  background: #262630;
+  background: rgba(38, 38, 48, 0.68);
   z-index: 2;
 }
 
 /* List of Games */
-.list-games {
+.list-games, .statistic {
   text-align: center;
 }
-.list-games > li {
+.list-games li:nth-child(odd), .statistic li:nth-child(odd) {
+  margin-top: 50px;
+}
+.list-games > li, .statistic > li {
   position: relative;
   display: inline-block;
   vertical-align: top;
   width: 33%;
 }
-.list-games > li h2 {
+.list-games > li h2, .statistic > li h2 {
   text-transform: uppercase;
   margin-bottom: 40px;
   background: -webkit-linear-gradient(yellow, green);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
-.list-games > li .circle {
+.list-games > li .circle, .statistic > li .circle {
   position: relative;
 }
-.list-games > li .circle strong {
+.list-games > li .circle strong, .statistic > li .circle strong {
   position: absolute;
   left: 0;
   right: 0;
@@ -131,7 +150,7 @@ h1 {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
-.list-games > li .game-description {
+.list-games > li .game-description, .statistic > li .game-description {
   margin-top: 40px;
   padding: 25px;
   border: 3px solid #212020;
@@ -140,10 +159,18 @@ h1 {
   -o-transition: all 1s;
   transition: all 1s;
 }
-.list-games > li .game-description p {
+.list-games > li .game-description p, .statistic > li .game-description p {
   line-height: 25px;
 }
-.list-games > li .game-description:hover {
+.list-games > li .game-description .btn, .statistic > li .game-description .btn {
+  background: -webkit-linear-gradient(green, yellow);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: bold;
+  border: 2px solid greenyellow;
+  color: black;
+}
+.list-games > li .game-description:hover, .statistic > li .game-description:hover {
   position: relative;
   z-index: 2;
   -moz-transform: scale(1.05);
@@ -155,11 +182,45 @@ h1 {
   border-image-slice: 1;
   background-color: rgba(0, 0, 0, 0.8);
 }
-.list-games > li .game-description:hover .btn {
+.list-games > li .game-description:hover .btn, .statistic > li .game-description:hover .btn {
   background: linear-gradient(to bottom right, green, yellow);
+  -webkit-text-fill-color: inherit;
 }
-.list-games > li .game-description:hover .btn:hover {
+.list-games > li .game-description:hover .btn:hover, .statistic > li .game-description:hover .btn:hover {
   background: linear-gradient(to bottom right, #c2172f, #1318be);
+}
+
+/* RouleTTe */
+.statistic li:nth-child(odd) {
+  margin-top: 50px;
+}
+
+.live-line {
+  border: 2px solid #30343e;
+  border-image-source: linear-gradient(to right, yellow, green);
+  border-image-slice: 1;
+  background: rgba(0, 0, 0, 0.22);
+}
+.live-line h3 {
+  border: 3px solid black;
+  letter-spacing: 4px;
+  -moz-transform: rotate(180deg);
+  -webkit-transform: rotate(180deg);
+  -o-transform: rotate(180deg);
+  transform: rotate(180deg);
+  writing-mode: tb-rl;
+  margin: 0;
+  border-image-source: linear-gradient(to right bottom, yellow, red);
+  border-image-slice: 1;
+  padding: 30px 5px;
+}
+
+/* Footer */
+.footer {
+  position: relative;
+  padding: 50px 85px;
+  background: #30343e;
+  z-index: 2;
 }
 
 /* Media */
