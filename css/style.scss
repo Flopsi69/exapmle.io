@@ -15,13 +15,39 @@ a {
   color: white;
 }
 
+.container {
+  position: relative;
+  left: 70px;
+  z-index: 2;
+  padding: 0 25px;
+  width: 1200px;
+  max-width: 100%;
+  margin: auto;
+  box-sizing: border-box;
+  background: rgba(38, 38, 48, 0.68);
+}
+
 h1 {
-  text-align: center;
+  position: relative;
+ /*  top: 0;
+ left: 0;
+ right: 0; */
+ text-align: center;
+ padding: 15px;
+  // background: #30343e;
   background: -webkit-linear-gradient( green, yellow );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  margin-bottom: 50px;
-  font-size: 3em;
+  margin: 0;
+  font-size: 2em; 
+}
+
+h2 {
+  font-size: 1.6em;
+  text-transform: uppercase;
+  background: -webkit-linear-gradient(yellow, green);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .text-center {
@@ -104,27 +130,27 @@ h1 {
   }
 }
 
+/* Header */ 
+.header, .footer {
+  margin: 25px 0;
+}
+
+/* Main */
+.main {
+  // margin: 50px 0;
+  .container {
+    padding: 15px 25px 80px;
+  }
+}
+
 /* Particles */
 .particles-js-canvas-el {
   position: fixed;
   top: 0;
 }
 
-/* Main part */
-
-.wrap {
-  position: relative;
-  width: 1200px;
-  padding: 30px 25px 110px 25px;
-  max-width: 100%;
-  left: 70px;
-  margin: auto;
-  box-sizing: border-box;
-  background: rgba(38, 38, 48, 0.68);;
-  z-index: 2;
-}
-
 /* List of Games */
+
 .list-games {
   text-align: center;
   li:nth-child(odd) {
@@ -136,11 +162,7 @@ h1 {
     vertical-align: top;
     width: 33%;
     h2 {
-      text-transform: uppercase;
       margin-bottom: 40px;
-      background: -webkit-linear-gradient(yellow, green);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
     }
     .circle {
       position: relative;
@@ -186,8 +208,7 @@ h1 {
         border-image-slice: 1;
         background-color: rgba(0, 0, 0, 0.8);
         .btn {
-          background: linear-gradient(to bottom right, green, yellow);
-          
+          background: linear-gradient(to bottom right, green, yellow);      
           -webkit-text-fill-color: inherit;
           &:hover {
             background: linear-gradient(to bottom right, rgb(194, 23, 47), #1318be);
@@ -200,10 +221,46 @@ h1 {
 
 /* RouleTTe */
 
+.cases {
+  h2 {
+   margin: 35px 0;
+ }
+}
+
 .statistic {
+  margin-top: 100px;
+  background: rgba(0, 0, 0, 0.22);
   @extend .list-games;
   li:nth-child(odd) {
     margin-top: 50px;
+  }
+  h2 {
+    font-size: 1.5em;
+  }
+}
+
+.case-list {
+  text-align: center;
+  li {
+    display: inline-block;
+    margin: 5px 0px;
+    width: 24%;
+    border: 3px solid #212020;
+    -webkit-transition: all 1s;
+    -moz-transition: all 1s;
+    -o-transition: all 1s;
+    transition: all 1s;
+    &:hover {
+      cursor: pointer;
+      border-image-source: linear-gradient(to right bottom, yellow, green);
+      border-image-slice: 1;
+      -moz-transform: scale(1.05);
+      -ms-transform: scale(1.05);
+      -webkit-transform: scale(1.05);
+      -o-transform: scale(1.05);
+      transform: scale(1.05);
+      background-color: rgba(0, 0, 0, 0.8);
+    }
   }
 }
 
@@ -228,11 +285,12 @@ h1 {
 }
 
 /* Footer */
-.footer {
-  position: relative;
-  padding: 50px 85px;
-  background: #30343e;
-  z-index: 2;
+.footer{
+  &>.container {
+    position: relative;
+    padding: 50px 85px;
+    background: #30343e;
+    z-index: 2; 
+  }
 }
-
 /* Media */

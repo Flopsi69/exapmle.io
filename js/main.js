@@ -1,8 +1,15 @@
 $(document).ready(function(){
 
+  var height = $('.case-list li').width();
+  $('.case-list li').css('height', height);
+
+  repeatColor();
+
+
+
   $('#circle1').circleProgress({
     value: 0.8,
-    size: 250,
+    size: 225,
     startAngle: (3*Math.PI)/2,
     thickness: 14,
     fill: {
@@ -14,7 +21,7 @@ $(document).ready(function(){
 
   $('#circle2').circleProgress({
     value: 0.50,
-    size: 250,
+    size: 225,
     startAngle: Math.PI/2,
     thickness: 14,
     fill: {
@@ -26,7 +33,7 @@ $(document).ready(function(){
 
   $('#circle3').circleProgress({
     value: 0.6,
-    size: 250,
+    size: 225,
     startAngle: Math.PI,
     thickness: 14,
     fill: {
@@ -149,3 +156,9 @@ particlesJS('particles-js',
   },
   "retina_detect": true
 });
+
+
+  function repeatColor() {
+    $('.case-list li').css('border-color') == 'rgb(0, 0, 0)' ?  $('.case-list li').css('border-color', 'green') :  $('.case-list li').css('border-color', 'black');
+    setTimeout(repeatColor, 500);
+  }
