@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
+	<meta name="description" content="">
+	<meta name="keywords" content="">
+	<meta name="author" content="skype: flopsi_69">
+	<title>EnergyBoom</title>
+	<link rel="stylesheet" href="fonts/font-awesome/css/font-awesome.min.css">
+	<link href="css/normalize.css" rel="stylesheet" >
+	<link href="css/style.css" rel="stylesheet">
+</head>
+
+<body id="particles-js">
+
+	<nav class="navbar">
+		<a class="logo" href="#">
+			<span class=""><img src="img/atom.png" style='width: 100%;' alt=""></span>
+		</a>
+		<ul class="nav">
+			<li class='active'>
+				<a href="#">
+					<i class="fa fa-superpowers" aria-hidden="true"></i>
+				</a>
+				<span class='icon-info'>menu</span>
+			</li>
+			<li>
+				<a href="#">
+					<i class="fa fa-superpowers" aria-hidden="true"></i>
+				</a>
+				<span class='icon-info'>some-text</span>
+			</li>
+			<li>
+				<a href="#">
+					<i class="fa fa-superpowers" aria-hidden="true"></i>
+				</a>
+				<span class='icon-info'>Flopsi</span>
+			</li>
+			<li>
+				<a href="#">
+					<i class="fa fa-superpowers" aria-hidden="true"></i>
+				</a>
+				<span class='icon-info'>Is it real?</span>
+			</li>
+			<li>
+				<a href="#">
+					<i class="fa fa-superpowers" aria-hidden="true"></i>
+				</a>
+				<span class='icon-info'>it's hidden</span>
+			</li>
+			<li>
+				<a href="#">
+					<i class="fa fa-superpowers" aria-hidden="true"></i>
+				</a>
+				<span class='icon-info'>short</span>
+			</li>
+		</ul>
+	</nav>
+
+	<header class='header'>
+		<div class="container">
+			<h1>Добыча материи</h1>
+		</div>
+	</header>
+
+	<main class='main'>
+		<div class="container">
+			<div class="live-line">
+				<h3>Live</h3>
+					<ul class='live-list'>
+						<li>game</li>
+						<li>game</li>
+						<li>game</li>
+						<li><img src="justdoit.png" alt=""></li>
+						<li></li>
+						<li></li>
+					</ul>
+			</div>
+			<div class="cases">
+				<h2 class='text-center'>Выберите источник:</h2>
+				<style>	
+					.case-list2 .circle {
+						-moz-border-radius: 100px;
+						-webkit-border-radius: 100px;
+						border-radius: 100px;
+						height: 160px;
+						position: absolute;
+						width: 160px;
+					}
+					.item {
+						cursor: pointer;
+						display: inline-block;
+						margin-bottom: 100px;
+						position: relative;
+						width: 160px;
+						height: 160px;
+						/*float: left;*/
+						margin-left: 46px;
+						margin-right: 46px;
+						text-align: center;
+						/*display: none;*/
+					}
+					.outer1 {
+						/*-moz-ox-shadow: 0 0 3px #AFD3FF;*/
+						-moz-transform: rotate(90deg);
+						-moz-transition: 0 1.8s ease-in-out, 0 1s ease-out, border-color 1.5s;
+						-ms-transform: rotate(90deg);
+						/*-webkit-box-shadow: 0 0 3px #AFD3FF;*/
+						-webkit-transform: rotate(90deg);
+						-webkit-transition: 0 1.8s ease-in-out, 0 1s ease-out, border-color 1.5s;
+						background: radial-gradient(center,ellipsecover,#ffffff0%,#e2efff100%);
+						border: 8px solid;
+						/*box-shadow: 0 0 3px #AFD3FF;*/
+						filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff',endColorstr='#e2efff',GradientType=1);
+						height: 160px;
+						left: -8px;
+						top: -8px;
+						transform: rotate(90deg);
+						transition: transform 1.8s ease-in-out, box-shadow 1s ease-out, border-color 1.5s;
+						width: 160px;
+						z-index: 2;
+						border-color: #258723;
+						/* -webkit-box-shadow: inset  0px 4px 100px 10px #0dff00; */
+						/* -moz-box-shadow: inset  0px 4px 100px 10px #0dff00; */
+						/* box-shadow: inset 0px 4px 100px 10px #0dff00; */
+					}
+					.item:hover .outer2 {
+						opacity: .9;
+					}
+					.item:hover .outer1{
+						/*-moz-box-shadow: 0 0 10px #0285E2;*/
+						-moz-transform: rotate(-10deg);
+						-ms-transform: rotate(-10deg);
+						/*-webkit-box-shadow: 0 0 10px #0285E2;*/
+						-webkit-transform: rotate(-10deg);
+						/*box-shadow: 0 0 10px #0285E2;*/
+						transform: rotate(-10deg);
+						/*border-color: #0088EA #7FC9FF;*/
+						-webkit-box-shadow: inset  0px 4px 71px 2px #0dff00;
+						-moz-box-shadow: inset  0px 4px 71px 2px #0dff00;
+						box-shadow: inset 0px 4px 71px 2px #0dff00;
+						border-color: greenyellow rgb(169, 9, 9);
+						-webkit-box-shadow: inset  0px 0px 20px 3px #red;
+						-moz-box-shadow: inset  0px 0px 20px 3px #red;
+						box-shadow: inset 0px 0px 20px 3px #red;
+					}
+					.outer2 {
+						top: -18px;
+						left: -18px;
+						width: 176px!important;
+						height: 176px!important;
+						z-index: 1;
+						border: 10px solid;
+						box-shadow: 0 0 20px #70c257;
+						-moz-box-shadow: 0 0 20px #70c257;
+						-webkit-box-shadow: 0 0 20px #70c257;
+						/* opacity: 0; */
+						transition: opacity .9s 0 opacity .9s 0 opacity .9s;
+						border-color: #70c257 #0a8419;	
+					}
+					img {
+							max-width: 100%;
+						}
+				</style>
+				<ul class="case-list2 text-center" style='margin-top: 100px;'>
+					<li class="item">
+						<div class="outer1 circle">
+						</div>
+						<div class="outer2 circle">
+							<img src="img/circle/17.png" alt="">
+						</div>
+					</li>
+					<li class="item">
+						<div class="outer1 circle">
+						</div>
+						<div class="outer2 circle">
+							<img src="img/circle/20.png" alt="">
+						</div>
+					</li>
+					<li class="item">
+						<div class="outer1 circle">
+						</div>
+						<div class="outer2 circle">
+						<img src="img/circle/4.png" alt="">
+						</div>
+					</li>
+					<li class="item">
+						<div class="outer1 circle">
+						</div>
+						<div class="outer2 circle">
+						<img src="img/circle/3.png" alt="">
+						</div>
+					</li>
+					<li class="item">
+						<div class="outer1 circle">
+						</div>
+						<div class="outer2 circle">
+						<img src="img/circle/3.png" alt="">
+						</div>
+					</li>
+					<li class="item">
+						<div class="outer1 circle">
+						</div>
+						<div class="outer2 circle">
+						<img src="img/circle/3.png" alt="">
+						</div>
+					</li>
+					<li class="item">
+						<div class="outer1 circle">
+						</div>
+						<div class="outer2 circle">
+						<img src="img/circle/3.png" alt="">
+						</div>
+					</li>
+					<li class="item">
+						<div class="outer1 circle">
+						</div>
+						<div class="outer2 circle">
+						<img src="img/circle/3.png" alt="">
+						</div>
+					</li>
+					<li class="item">
+						<div class="outer1 circle">
+						</div>
+						<div class="outer2 circle">
+							<img src="img/circle/17.png" alt="">
+						</div>
+					</li>
+					<li class="item">
+						<div class="outer1 circle">
+						</div>
+						<div class="outer2 circle">
+							<img src="img/circle/20.png" alt="">
+						</div>
+					</li>
+					<li class="item">
+						<div class="outer1 circle">
+						</div>
+						<div class="outer2 circle">
+						<img src="img/circle/4.png" alt="">
+						</div>
+					</li>
+					<li class="item">
+						<div class="outer1 circle">
+						</div>
+						<div class="outer2 circle">
+						<img src="img/circle/3.png" alt="">
+						</div>
+					</li>
+				</ul>
+			</div>
+			<ul class='statistic roulete-statistic'>
+				<li>
+					<h2>Пользывателей</h2>
+					<div class='circle' id="circle1">
+						<strong></strong>
+					</div>
+				</li>
+				<li>
+					<h2>открыто кейсов</h2>
+					<div class='circle' id="circle2">
+						<strong></strong>
+					</div>
+				</li>
+				<li>
+					<h2>Заработано</h2>
+					<div class='circle' id="circle3">
+						<strong></strong>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</main>
+
+	<footer class='footer'>
+		<div class="container">
+			<p>
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi aperiam reprehenderit quia ducimus similique eius eos nostrum laudantium debitis quae ipsam, vero esse eveniet dicta qui aut illum, laboriosam aspernatur. Optio laborum dolorem facilis fugit vitae quas laudantium asperiores perferendis deserunt non necessitatibus voluptates consectetur soluta ratione placeat, aliquid culpa maiores fugiat quis suscipit, itaque!
+			</p>
+		</div>
+	</footer>
+
+	<script src="js/jquery.min.js"></script>
+	<script src='js/circle-progress.js'></script>
+	<script src='js/particles.min.js'></script>
+	<script src='js/main.js'></script>
+</body>
+</html>
+

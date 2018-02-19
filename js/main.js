@@ -1,47 +1,33 @@
 $(document).ready(function(){
 
-  var height = $('.case-list li').width();
-  $('.case-list li').css('height', height);
-
+  initCircles();
   repeatColor();
 
+  /*1*/
+  var height = $('.case-list li').width();
+  $('.case-list li').css('height', height);
+  /***1***/
 
-
-  $('#circle1').circleProgress({
-    value: 0.8,
-    size: 225,
-    startAngle: (3*Math.PI)/2,
-    thickness: 14,
-    fill: {
-      gradient: ["red","yellow","green"]
+  /*2*/
+  $('.tabs-toggle li a').click(function(){
+    var target = $(this).attr('href');
+    var targetClass = '.' + target.substr(target.length - 5);
+    console.log(targetClass);
+    if ( $(targetClass).css('display') != 'none') {
+      initHighlight(targetClass);
+      return false;
     }
-  }).on('circle-animation-progress', function(event, progress) {
-    $(this).find('strong').html(parseInt(80 * progress) + ' %');
-  });
+    $('#profile .active').hide('clip', 800).removeClass('active');
+    setTimeout( function() {
+      $(targetClass).show('clip', 800).addClass('active');
+      setTimeout(function(){
+        initHighlight(targetClass);
+      }, 600);
+    }, 900);
+    return false;
+  })
+  /***2***/
 
-  $('#circle2').circleProgress({
-    value: 0.50,
-    size: 225,
-    startAngle: Math.PI/2,
-    thickness: 14,
-    fill: {
-      gradient: ["red","yellow","green"]
-    }
-  }).on('circle-animation-progress', function(event, progress) {
-    $(this).find('strong').html(parseInt(50 * progress) + ' %');
-  });
-
-  $('#circle3').circleProgress({
-    value: 0.6,
-    size: 225,
-    startAngle: Math.PI,
-    thickness: 14,
-    fill: {
-      gradient: ["red","yellow","green"]
-    }
-  }).on('circle-animation-progress', function(event, progress) {
-    $(this).find('strong').html(parseInt(60 * progress) + ' %');
-  });
 
 });
 
@@ -49,7 +35,7 @@ particlesJS('particles-js',
 {
   "particles": {
     "number": {
-      "value": 80,
+      "value": 55,
       "density": {
         "enable": true,
         "value_area": 789.1476416322727
@@ -158,7 +144,53 @@ particlesJS('particles-js',
 });
 
 
-  function repeatColor() {
-    $('.case-list li').css('border-color') == 'rgb(0, 0, 0)' ?  $('.case-list li').css('border-color', 'green') :  $('.case-list li').css('border-color', 'black');
-    setTimeout(repeatColor, 500);
-  }
+function repeatColor() {
+  $('.case-list li').css('border-color') == 'rgb(0, 0, 0)' ?  $('.case-list li').css('border-color', 'green') :  $('.case-list li').css('border-color', 'black');
+  setTimeout(repeatColor, 500);
+}
+
+function initHighlight(targetClass) {
+  $(targetClass).addClass('highlight');
+  setTimeout(function(){
+    $(targetClass).removeClass('highlight');
+  }, 600);
+  console.log('lit');
+}
+
+function initCircles() {
+  $('#circle1').circleProgress({
+    value: 0.8,
+    size: 225,
+    startAngle: (3*Math.PI)/2,
+    thickness: 14,
+    fill: {
+      gradient: ["red","yellow","green"]
+    }
+  }).on('circle-animation-progress', function(event, progress) {
+    $(this).find('strong').html(parseInt(80 * progress) + ' %');
+  });
+
+  $('#circle2').circleProgress({
+    value: 0.50,
+    size: 225,
+    startAngle: Math.PI/2,
+    thickness: 14,
+    fill: {
+      gradient: ["red","yellow","green"]
+    }
+  }).on('circle-animation-progress', function(event, progress) {
+    $(this).find('strong').html(parseInt(50 * progress) + ' %');
+  });
+
+  $('#circle3').circleProgress({
+    value: 0.6,
+    size: 225,
+    startAngle: Math.PI,
+    thickness: 14,
+    fill: {
+      gradient: ["red","yellow","green"]
+    }
+  }).on('circle-animation-progress', function(event, progress) {
+    $(this).find('strong').html(parseInt(60 * progress) + ' %');
+  });
+}

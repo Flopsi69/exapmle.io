@@ -11,14 +11,23 @@ ul {
   margin: 0;
 }
 
+img {
+  max-width: 100%;
+}
+
 a {
   color: white;
 }
 
+span.firm-marked {
+  color: greenyellow;
+}
+
 .container {
--webkit-box-shadow: 0px 0px 22px -6px rgba(13,255,0,1);
--moz-box-shadow: 0px 0px 22px -6px rgba(13,255,0,1);
-box-shadow: 0px 0px 22px -6px rgba(13,255,0,1);
+  /* -webkit-box-shadow: inset 0px 0px 16px -3px rgba(13,255,0,1); */
+  /* -moz-box-shadow: inset 0px 0px 16px -3px rgba(13,255,0,1); */
+  /* box-shadow: inset 0px 0px 16px -3px rgba(13,255,0,1); */
+  border: 2px solid gray;
   position: relative;
   left: 70px;
   z-index: 2;
@@ -32,12 +41,8 @@ box-shadow: 0px 0px 22px -6px rgba(13,255,0,1);
 
 h1 {
   position: relative;
- /*  top: 0;
- left: 0;
- right: 0; */
- text-align: center;
- padding: 15px;
-  // background: #30343e;
+  text-align: center;
+  padding: 15px;
   background: -webkit-linear-gradient( green, yellow );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -45,12 +50,20 @@ h1 {
   font-size: 2em; 
 }
 
-h2 {
+h2, h3, h4 {
   font-size: 1.6em;
   text-transform: uppercase;
   background: -webkit-linear-gradient(yellow, green);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+
+h3 {
+  font-size: 1.2em;
+}
+
+h4 {
+  font-size: 1em;
 }
 
 .text-center {
@@ -61,15 +74,25 @@ h2 {
   cursor: pointer;
   border: 1px solid transparent;
   border-radius: 30px;
-  font-size: 18px;
+  font-size: 16px;
   outline: none!important;
   background: #282828;
-  color: white;
   padding: 15px 50px;
+  /* background: -webkit-linear-gradient(green, yellow);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent; */
+  background: transparent;
+  font-weight: bold;
+  border: 2px dashed greenyellow;
+  color: white;
+  letter-spacing: 1px;
   -webkit-transition: all 1s ;
   -moz-transition: all 1s ;
   -o-transition: all 1s ;
   transition: all 1s ;
+  &:hover {
+    border: 2px solid greenyellow;
+  }
 }
 
 /* Nav */
@@ -92,15 +115,17 @@ h2 {
   // overflow-y: auto;
   .nav {
     text-align: center;
-    transition: all 1s;
+    -webkit-transition: all .5s ;
+    -moz-transition: all .5s ;
+    -o-transition: all .5s ;
+    transition: all .5s ;
     li {
       position: relative;
       border-top: 1px solid $black;
       &:hover {
         a {
-          transition: all 1s;
           transform: scale(1.5);
-          color: green;
+          color: #58ec3d;
         }
         .icon-info {
           display: block;
@@ -108,6 +133,7 @@ h2 {
           background: rgba(38, 38, 48, 0.68);
           border-image-source: linear-gradient(to right bottom, yellow, green);
           border-image-slice: 1;
+          opacity: 1;  
         }
       }
       &.active {
@@ -116,13 +142,13 @@ h2 {
       .icon-info {
         position: absolute;
         display: none;
+        opacity: 0;
         font-weight: bold;
         font-style: italic;
         padding: 7px 0;
         width: 100px;
         top: 12px;
         right: -120px;
-        // bottom: 0;
         &:before {
           content: ''; 
           position: absolute;
@@ -134,7 +160,10 @@ h2 {
       a {
         display: block;
         padding: 20px 0;
-        transition: all 1s;
+        -webkit-transition: all .5s ;
+        -moz-transition: all .5s ;
+        -o-transition: all .5s ;
+        transition: all .5s ;
       }
     }
   }
@@ -151,6 +180,790 @@ h2 {
   }
   
 }
+
+/* KeyFrames */
+
+@-webkit-keyframes grow {
+  0% {
+    -moz-transform: scaleY(1);
+    -ms-transform: scaleY(1);
+    -webkit-transform: scaleY(1);
+    transform: scaleY(1)
+  }
+
+  40% {
+    -moz-transform: scaleY(0.5);
+    -ms-transform: scaleY(0.5);
+    -webkit-transform: scaleY(0.5);
+    transform: scaleY(0.5)
+  }
+
+  100% {
+    -moz-transform: scaleY(1);
+    -ms-transform: scaleY(1);
+    -webkit-transform: scaleY(1);
+    transform: scaleY(1)
+  }
+}
+
+@keyframes grow {
+  0% {
+    -moz-transform: scaleY(1);
+    -ms-transform: scaleY(1);
+    -webkit-transform: scaleY(1);
+    transform: scaleY(1)
+  }
+
+  40% {
+    -moz-transform: scaleY(0.5);
+    -ms-transform: scaleY(0.5);
+    -webkit-transform: scaleY(0.5);
+    transform: scaleY(0.5)
+  }
+
+  100% {
+    -moz-transform: scaleY(1);
+    -ms-transform: scaleY(1);
+    -webkit-transform: scaleY(1);
+    transform: scaleY(1)
+  }
+}
+
+@-webkit-keyframes grow-more {
+  0% {
+    -moz-transform: scaleY(1.5);
+    -ms-transform: scaleY(1.5);
+    -webkit-transform: scaleY(1.5);
+    transform: scaleY(1.5)
+  }
+
+  40% {
+    -moz-transform: scaleY(0.5);
+    -ms-transform: scaleY(0.5);
+    -webkit-transform: scaleY(0.5);
+    transform: scaleY(0.5)
+  }
+
+  100% {
+    -moz-transform: scaleY(1.5);
+    -ms-transform: scaleY(1.5);
+    -webkit-transform: scaleY(1.5);
+    transform: scaleY(1.5)
+  }
+}
+
+@keyframes grow-more {
+  0% {
+    -moz-transform: scaleY(1.5);
+    -ms-transform: scaleY(1.5);
+    -webkit-transform: scaleY(1.5);
+    transform: scaleY(1.5)
+  }
+
+  40% {
+    -moz-transform: scaleY(0.5);
+    -ms-transform: scaleY(0.5);
+    -webkit-transform: scaleY(0.5);
+    transform: scaleY(0.5)
+  }
+
+  100% {
+    -moz-transform: scaleY(1.5);
+    -ms-transform: scaleY(1.5);
+    -webkit-transform: scaleY(1.5);
+    transform: scaleY(1.5)
+  }
+}
+
+.game-description svg#cool-anim-1 .to-bottom line:nth-child(1) {
+    -webkit-animation: grow 1.6s ease infinite .05s;
+    -moz-animation: grow 1.6s ease infinite .05s;
+    -ms-animation: grow 1.6s ease infinite .05s;
+    -o-animation: grow 1.6s ease infinite .05s;
+    animation: grow 1.6s ease infinite .05s
+}
+
+.game-description svg#cool-anim-1 .to-bottom line:nth-child(2) {
+    -webkit-animation: grow 1.6s ease infinite .1s;
+    -moz-animation: grow 1.6s ease infinite .1s;
+    -ms-animation: grow 1.6s ease infinite .1s;
+    -o-animation: grow 1.6s ease infinite .1s;
+    animation: grow 1.6s ease infinite .1s
+}
+
+.game-description svg#cool-anim-1 .to-bottom line:nth-child(3) {
+    -webkit-animation: grow 1.6s ease infinite .15s;
+    -moz-animation: grow 1.6s ease infinite .15s;
+    -ms-animation: grow 1.6s ease infinite .15s;
+    -o-animation: grow 1.6s ease infinite .15s;
+    animation: grow 1.6s ease infinite .15s
+}
+
+.game-description svg#cool-anim-1 .to-bottom line:nth-child(4) {
+    -webkit-animation: grow 1.6s ease infinite .2s;
+    -moz-animation: grow 1.6s ease infinite .2s;
+    -ms-animation: grow 1.6s ease infinite .2s;
+    -o-animation: grow 1.6s ease infinite .2s;
+    animation: grow 1.6s ease infinite .2s
+}
+
+.game-description svg#cool-anim-1 .to-bottom line:nth-child(5) {
+    -webkit-animation: grow 1.6s ease infinite .25s;
+    -moz-animation: grow 1.6s ease infinite .25s;
+    -ms-animation: grow 1.6s ease infinite .25s;
+    -o-animation: grow 1.6s ease infinite .25s;
+    animation: grow 1.6s ease infinite .25s
+}
+
+.game-description svg#cool-anim-1 .to-bottom line:nth-child(6) {
+    -webkit-animation: grow 1.6s ease infinite .3s;
+    -moz-animation: grow 1.6s ease infinite .3s;
+    -ms-animation: grow 1.6s ease infinite .3s;
+    -o-animation: grow 1.6s ease infinite .3s;
+    animation: grow 1.6s ease infinite .3s
+}
+
+.game-description svg#cool-anim-1 .to-bottom line:nth-child(7) {
+    -webkit-animation: grow 1.6s ease infinite .35s;
+    -moz-animation: grow 1.6s ease infinite .35s;
+    -ms-animation: grow 1.6s ease infinite .35s;
+    -o-animation: grow 1.6s ease infinite .35s;
+    animation: grow 1.6s ease infinite .35s
+}
+
+.game-description svg#cool-anim-1 .to-bottom line:nth-child(8) {
+    -webkit-animation: grow 1.6s ease infinite .4s;
+    -moz-animation: grow 1.6s ease infinite .4s;
+    -ms-animation: grow 1.6s ease infinite .4s;
+    -o-animation: grow 1.6s ease infinite .4s;
+    animation: grow 1.6s ease infinite .4s
+}
+
+.game-description svg#cool-anim-1 .to-bottom line:nth-child(9) {
+    -webkit-animation: grow 1.6s ease infinite .45s;
+    -moz-animation: grow 1.6s ease infinite .45s;
+    -ms-animation: grow 1.6s ease infinite .45s;
+    -o-animation: grow 1.6s ease infinite .45s;
+    animation: grow 1.6s ease infinite .45s
+}
+
+.game-description svg#cool-anim-1 .to-bottom line:nth-child(10) {
+    -webkit-animation: grow 1.6s ease infinite .5s;
+    -moz-animation: grow 1.6s ease infinite .5s;
+    -ms-animation: grow 1.6s ease infinite .5s;
+    -o-animation: grow 1.6s ease infinite .5s;
+    animation: grow 1.6s ease infinite .5s
+}
+
+.game-description svg#cool-anim-1 .to-bottom line:nth-child(11) {
+    -webkit-animation: grow 1.6s ease infinite .55s;
+    -moz-animation: grow 1.6s ease infinite .55s;
+    -ms-animation: grow 1.6s ease infinite .55s;
+    -o-animation: grow 1.6s ease infinite .55s;
+    animation: grow 1.6s ease infinite .55s
+}
+
+.game-description svg#cool-anim-1 .to-bottom line:nth-child(12) {
+    -webkit-animation: grow 1.6s ease infinite .6s;
+    -moz-animation: grow 1.6s ease infinite .6s;
+    -ms-animation: grow 1.6s ease infinite .6s;
+    -o-animation: grow 1.6s ease infinite .6s;
+    animation: grow 1.6s ease infinite .6s
+}
+
+.game-description svg#cool-anim-1 .to-bottom line:nth-child(13) {
+    -webkit-animation: grow 1.6s ease infinite .65s;
+    -moz-animation: grow 1.6s ease infinite .65s;
+    -ms-animation: grow 1.6s ease infinite .65s;
+    -o-animation: grow 1.6s ease infinite .65s;
+    animation: grow 1.6s ease infinite .65s
+}
+
+.game-description svg#cool-anim-1 .to-bottom line:nth-child(14) {
+    -webkit-animation: grow 1.6s ease infinite .5s;
+    -moz-animation: grow 1.6s ease infinite .5s;
+    -ms-animation: grow 1.6s ease infinite .5s;
+    -o-animation: grow 1.6s ease infinite .5s;
+    animation: grow 1.6s ease infinite .5s
+}
+
+.game-description svg#cool-anim-1 .to-bottom line:nth-child(15) {
+    -webkit-animation: grow 1.6s ease infinite .45s;
+    -moz-animation: grow 1.6s ease infinite .45s;
+    -ms-animation: grow 1.6s ease infinite .45s;
+    -o-animation: grow 1.6s ease infinite .45s;
+    animation: grow 1.6s ease infinite .45s
+}
+
+.game-description svg#cool-anim-1 .to-bottom line:nth-child(16) {
+    -webkit-animation: grow 1.6s ease infinite .4s;
+    -moz-animation: grow 1.6s ease infinite .4s;
+    -ms-animation: grow 1.6s ease infinite .4s;
+    -o-animation: grow 1.6s ease infinite .4s;
+    animation: grow 1.6s ease infinite .4s
+}
+
+.game-description svg#cool-anim-1 .to-bottom line:nth-child(17) {
+    -webkit-animation: grow 1.6s ease infinite .35s;
+    -moz-animation: grow 1.6s ease infinite .35s;
+    -ms-animation: grow 1.6s ease infinite .35s;
+    -o-animation: grow 1.6s ease infinite .35s;
+    animation: grow 1.6s ease infinite .35s
+}
+
+.game-description svg#cool-anim-1 .to-bottom line:nth-child(18) {
+    -webkit-animation: grow 1.6s ease infinite .3s;
+    -moz-animation: grow 1.6s ease infinite .3s;
+    -ms-animation: grow 1.6s ease infinite .3s;
+    -o-animation: grow 1.6s ease infinite .3s;
+    animation: grow 1.6s ease infinite .3s
+}
+
+.game-description svg#cool-anim-1 .to-bottom line:nth-child(19) {
+    -webkit-animation: grow 1.6s ease infinite .25s;
+    -moz-animation: grow 1.6s ease infinite .25s;
+    -ms-animation: grow 1.6s ease infinite .25s;
+    -o-animation: grow 1.6s ease infinite .25s;
+    animation: grow 1.6s ease infinite .25s
+}
+
+.game-description svg#cool-anim-1 .to-bottom line:nth-child(20) {
+    -webkit-animation: grow 1.6s ease infinite .2s;
+    -moz-animation: grow 1.6s ease infinite .2s;
+    -ms-animation: grow 1.6s ease infinite .2s;
+    -o-animation: grow 1.6s ease infinite .2s;
+    animation: grow 1.6s ease infinite .2s
+}
+
+.game-description svg#cool-anim-1 .to-bottom line:nth-child(21) {
+    -webkit-animation: grow 1.6s ease infinite .15s;
+    -moz-animation: grow 1.6s ease infinite .15s;
+    -ms-animation: grow 1.6s ease infinite .15s;
+    -o-animation: grow 1.6s ease infinite .15s;
+    animation: grow 1.6s ease infinite .15s
+}
+
+.game-description svg#cool-anim-1 .to-bottom line:nth-child(22) {
+    -webkit-animation: grow 1.6s ease infinite .1s;
+    -moz-animation: grow 1.6s ease infinite .1s;
+    -ms-animation: grow 1.6s ease infinite .1s;
+    -o-animation: grow 1.6s ease infinite .1s;
+    animation: grow 1.6s ease infinite .1s
+}
+
+.game-description svg#cool-anim-1 .to-bottom line:nth-child(23) {
+    -webkit-animation: grow 1.6s ease infinite .05s;
+    -moz-animation: grow 1.6s ease infinite .05s;
+    -ms-animation: grow 1.6s ease infinite .05s;
+    -o-animation: grow 1.6s ease infinite .05s;
+    animation: grow 1.6s ease infinite .05s
+}
+
+.game-description svg#cool-anim-1 .to-bottom line:nth-child(24) {
+    -webkit-animation: grow 1.6s ease infinite 0s;
+    -moz-animation: grow 1.6s ease infinite 0s;
+    -ms-animation: grow 1.6s ease infinite 0s;
+    -o-animation: grow 1.6s ease infinite 0s;
+    animation: grow 1.6s ease infinite 0s
+}
+
+.game-description svg#cool-anim-1 .to-bottom line:nth-child(25) {
+    -webkit-animation: grow 1.6s ease infinite -.05s;
+    -moz-animation: grow 1.6s ease infinite -.05s;
+    -ms-animation: grow 1.6s ease infinite -.05s;
+    -o-animation: grow 1.6s ease infinite -.05s;
+    animation: grow 1.6s ease infinite -.05s
+}
+
+.game-description svg#cool-anim-1 .to-bottom line:nth-child(26) {
+    -webkit-animation: grow 1.6s ease infinite -.1s;
+    -moz-animation: grow 1.6s ease infinite -.1s;
+    -ms-animation: grow 1.6s ease infinite -.1s;
+    -o-animation: grow 1.6s ease infinite -.1s;
+    animation: grow 1.6s ease infinite -.1s
+}
+
+.game-description svg#cool-anim-1 .to-top line:nth-child(1) {
+    -webkit-animation: grow-more 1.6s ease infinite .05s;
+    -moz-animation: grow-more 1.6s ease infinite .05s;
+    -ms-animation: grow-more 1.6s ease infinite .05s;
+    -o-animation: grow-more 1.6s ease infinite .05s;
+    animation: grow-more 1.6s ease infinite .05s
+}
+
+.game-description svg#cool-anim-1 .to-top line:nth-child(2) {
+    -webkit-animation: grow-more 1.6s ease infinite .1s;
+    -moz-animation: grow-more 1.6s ease infinite .1s;
+    -ms-animation: grow-more 1.6s ease infinite .1s;
+    -o-animation: grow-more 1.6s ease infinite .1s;
+    animation: grow-more 1.6s ease infinite .1s
+}
+
+.game-description svg#cool-anim-1 .to-top line:nth-child(3) {
+    -webkit-animation: grow-more 1.6s ease infinite .15s;
+    -moz-animation: grow-more 1.6s ease infinite .15s;
+    -ms-animation: grow-more 1.6s ease infinite .15s;
+    -o-animation: grow-more 1.6s ease infinite .15s;
+    animation: grow-more 1.6s ease infinite .15s
+}
+
+.game-description svg#cool-anim-1 .to-top line:nth-child(4) {
+    -webkit-animation: grow-more 1.6s ease infinite .2s;
+    -moz-animation: grow-more 1.6s ease infinite .2s;
+    -ms-animation: grow-more 1.6s ease infinite .2s;
+    -o-animation: grow-more 1.6s ease infinite .2s;
+    animation: grow-more 1.6s ease infinite .2s
+}
+
+.game-description svg#cool-anim-1 .to-top line:nth-child(5) {
+    -webkit-animation: grow-more 1.6s ease infinite .25s;
+    -moz-animation: grow-more 1.6s ease infinite .25s;
+    -ms-animation: grow-more 1.6s ease infinite .25s;
+    -o-animation: grow-more 1.6s ease infinite .25s;
+    animation: grow-more 1.6s ease infinite .25s;
+}
+
+.game-description svg#cool-anim-1 .to-top line:nth-child(6) {
+    -webkit-animation: grow-more 1.6s ease infinite .3s;
+    -moz-animation: grow-more 1.6s ease infinite .3s;
+    -ms-animation: grow-more 1.6s ease infinite .3s;
+    -o-animation: grow-more 1.6s ease infinite .3s;
+    animation: grow-more 1.6s ease infinite .3s
+}
+
+.game-description svg#cool-anim-1 .to-top line:nth-child(7) {
+    -webkit-animation: grow-more 1.6s ease infinite .35s;
+    -moz-animation: grow-more 1.6s ease infinite .35s;
+    -ms-animation: grow-more 1.6s ease infinite .35s;
+    -o-animation: grow-more 1.6s ease infinite .35s;
+    animation: grow-more 1.6s ease infinite .35s
+}
+
+.game-description svg#cool-anim-1 .to-top line:nth-child(8) {
+    -webkit-animation: grow-more 1.6s ease infinite .4s;
+    -moz-animation: grow-more 1.6s ease infinite .4s;
+    -ms-animation: grow-more 1.6s ease infinite .4s;
+    -o-animation: grow-more 1.6s ease infinite .4s;
+    animation: grow-more 1.6s ease infinite .4s
+}
+
+.game-description svg#cool-anim-1 .to-top line:nth-child(9) {
+    -webkit-animation: grow-more 1.6s ease infinite .45s;
+    -moz-animation: grow-more 1.6s ease infinite .45s;
+    -ms-animation: grow-more 1.6s ease infinite .45s;
+    -o-animation: grow-more 1.6s ease infinite .45s;
+    animation: grow-more 1.6s ease infinite .45s
+}
+
+.game-description svg#cool-anim-1 .to-top line:nth-child(10) {
+    -webkit-animation: grow-more 1.6s ease infinite .5s;
+    -moz-animation: grow-more 1.6s ease infinite .5s;
+    -ms-animation: grow-more 1.6s ease infinite .5s;
+    -o-animation: grow-more 1.6s ease infinite .5s;
+    animation: grow-more 1.6s ease infinite .5s
+}
+
+.game-description svg#cool-anim-1 .to-top line:nth-child(11) {
+    -webkit-animation: grow-more 1.6s ease infinite .55s;
+    -moz-animation: grow-more 1.6s ease infinite .55s;
+    -ms-animation: grow-more 1.6s ease infinite .55s;
+    -o-animation: grow-more 1.6s ease infinite .55s;
+    animation: grow-more 1.6s ease infinite .55s
+}
+
+.game-description svg#cool-anim-1 .to-top line:nth-child(12) {
+    -webkit-animation: grow-more 1.6s ease infinite .6s;
+    -moz-animation: grow-more 1.6s ease infinite .6s;
+    -ms-animation: grow-more 1.6s ease infinite .6s;
+    -o-animation: grow-more 1.6s ease infinite .6s;
+    animation: grow-more 1.6s ease infinite .6s
+}
+
+.game-description svg#cool-anim-1 .to-top line:nth-child(13) {
+    -webkit-animation: grow-more 1.6s ease infinite .65s;
+    -moz-animation: grow-more 1.6s ease infinite .65s;
+    -ms-animation: grow-more 1.6s ease infinite .65s;
+    -o-animation: grow-more 1.6s ease infinite .65s;
+    animation: grow-more 1.6s ease infinite .65s
+}
+
+.game-description svg#cool-anim-1 .to-top line:nth-child(14) {
+    -webkit-animation: grow-more 1.6s ease infinite .5s;
+    -moz-animation: grow-more 1.6s ease infinite .5s;
+    -ms-animation: grow-more 1.6s ease infinite .5s;
+    -o-animation: grow-more 1.6s ease infinite .5s;
+    animation: grow-more 1.6s ease infinite .5s
+}
+
+.game-description svg#cool-anim-1 .to-top line:nth-child(15) {
+    -webkit-animation: grow-more 1.6s ease infinite .45s;
+    -moz-animation: grow-more 1.6s ease infinite .45s;
+    -ms-animation: grow-more 1.6s ease infinite .45s;
+    -o-animation: grow-more 1.6s ease infinite .45s;
+    animation: grow-more 1.6s ease infinite .45s
+}
+
+.game-description svg#cool-anim-1 .to-top line:nth-child(16) {
+    -webkit-animation: grow-more 1.6s ease infinite .4s;
+    -moz-animation: grow-more 1.6s ease infinite .4s;
+    -ms-animation: grow-more 1.6s ease infinite .4s;
+    -o-animation: grow-more 1.6s ease infinite .4s;
+    animation: grow-more 1.6s ease infinite .4s
+}
+
+.game-description svg#cool-anim-1 .to-top line:nth-child(17) {
+    -webkit-animation: grow-more 1.6s ease infinite .35s;
+    -moz-animation: grow-more 1.6s ease infinite .35s;
+    -ms-animation: grow-more 1.6s ease infinite .35s;
+    -o-animation: grow-more 1.6s ease infinite .35s;
+    animation: grow-more 1.6s ease infinite .35s
+}
+
+.game-description svg#cool-anim-1 .to-top line:nth-child(18) {
+    -webkit-animation: grow-more 1.6s ease infinite .3s;
+    -moz-animation: grow-more 1.6s ease infinite .3s;
+    -ms-animation: grow-more 1.6s ease infinite .3s;
+    -o-animation: grow-more 1.6s ease infinite .3s;
+    animation: grow-more 1.6s ease infinite .3s
+}
+
+.game-description svg#cool-anim-1 .to-top line:nth-child(19) {
+    -webkit-animation: grow-more 1.6s ease infinite .25s;
+    -moz-animation: grow-more 1.6s ease infinite .25s;
+    -ms-animation: grow-more 1.6s ease infinite .25s;
+    -o-animation: grow-more 1.6s ease infinite .25s;
+    animation: grow-more 1.6s ease infinite .25s
+}
+
+.game-description svg#cool-anim-1 .to-top line:nth-child(20) {
+    -webkit-animation: grow-more 1.6s ease infinite .2s;
+    -moz-animation: grow-more 1.6s ease infinite .2s;
+    -ms-animation: grow-more 1.6s ease infinite .2s;
+    -o-animation: grow-more 1.6s ease infinite .2s;
+    animation: grow-more 1.6s ease infinite .2s
+}
+
+.game-description svg#cool-anim-1 .to-top line:nth-child(21) {
+    -webkit-animation: grow-more 1.6s ease infinite .15s;
+    -moz-animation: grow-more 1.6s ease infinite .15s;
+    -ms-animation: grow-more 1.6s ease infinite .15s;
+    -o-animation: grow-more 1.6s ease infinite .15s;
+    animation: grow-more 1.6s ease infinite .15s
+}
+
+.game-description svg#cool-anim-1 .to-top line:nth-child(22) {
+    -webkit-animation: grow-more 1.6s ease infinite .1s;
+    -moz-animation: grow-more 1.6s ease infinite .1s;
+    -ms-animation: grow-more 1.6s ease infinite .1s;
+    -o-animation: grow-more 1.6s ease infinite .1s;
+    animation: grow-more 1.6s ease infinite .1s
+}
+
+.game-description svg#cool-anim-1 .to-top line:nth-child(23) {
+    -webkit-animation: grow-more 1.6s ease infinite .05s;
+    -moz-animation: grow-more 1.6s ease infinite .05s;
+    -ms-animation: grow-more 1.6s ease infinite .05s;
+    -o-animation: grow-more 1.6s ease infinite .05s;
+    animation: grow-more 1.6s ease infinite .05s
+}
+
+.game-description svg#cool-anim-1 .to-top line:nth-child(24) {
+    -webkit-animation: grow-more 1.6s ease infinite 0s;
+    -moz-animation: grow-more 1.6s ease infinite 0s;
+    -ms-animation: grow-more 1.6s ease infinite 0s;
+    -o-animation: grow-more 1.6s ease infinite 0s;
+    animation: grow-more 1.6s ease infinite 0s
+}
+
+.game-description svg#cool-anim-1 .to-top line:nth-child(25) {
+    -webkit-animation: grow-more 1.6s ease infinite -.05s;
+    -moz-animation: grow-more 1.6s ease infinite -.05s;
+    -ms-animation: grow-more 1.6s ease infinite -.05s;
+    -o-animation: grow-more 1.6s ease infinite -.05s;
+    animation: grow-more 1.6s ease infinite -.05s
+}
+
+.game-description svg#cool-anim-1 .to-top line:nth-child(26) {
+    -webkit-animation: grow-more 1.6s ease infinite -.1s;
+    -moz-animation: grow-more 1.6s ease infinite -.1s;
+    -ms-animation: grow-more 1.6s ease infinite -.1s;
+    -o-animation: grow-more 1.6s ease infinite -.1s;
+    animation: grow-more 1.6s ease infinite -.1s
+}
+
+.game-description svg#cool-anim-1 .to-top line {
+    -webkit-transform-origin: center 376px;
+    -moz-transform-origin: center 376px;
+    -o-transform-origin: center 376px;
+    transform-origin: center 376px
+}
+
+.game-description svg#cool-anim-1 .to-bottom line {
+    -webkit-transform-origin: center 290px;
+    -moz-transform-origin: center 290px;
+    -o-transform-origin: center 290px;
+    transform-origin: center 290px
+}
+
+@keyframes swing {
+  0% {
+    -moz-transform: rotate(-1deg) scale(1);
+    -ms-transform: rotate(-1deg) scale(1);
+    -webkit-transform: rotate(-1deg) scale(1);
+    transform: rotate(-1deg) scale(1)
+  }
+
+  50% {
+    -moz-transform: rotate(1deg) scale(0.3);
+    -ms-transform: rotate(1deg) scale(0.3);
+    -webkit-transform: rotate(1deg) scale(0.3);
+    transform: rotate(1deg) scale(0.3)
+  }
+
+  100% {
+    -moz-transform: rotate(-1deg) scale(1);
+    -ms-transform: rotate(-1deg) scale(1);
+    -webkit-transform: rotate(-1deg) scale(1);
+    transform: rotate(-1deg) scale(1)
+  }
+}
+
+.game-description svg#cool-anim-2 line:nth-of-type(2) {
+    -webkit-animation: swing 3s ease infinite;
+    -moz-animation: swing 3s ease infinite;
+    -ms-animation: swing 3s ease infinite;
+    -o-animation: swing 3s ease infinite;
+    animation: swing 3s ease infinite
+}
+
+.game-description svg#cool-anim-2 line:nth-of-type(3) {
+    -webkit-animation: swing 4.5s ease infinite;
+    -moz-animation: swing 4.5s ease infinite;
+    -ms-animation: swing 4.5s ease infinite;
+    -o-animation: swing 4.5s ease infinite;
+    animation: swing 4.5s ease infinite
+}
+
+.game-description svg#cool-anim-2 line:nth-of-type(4) {
+    -webkit-animation: swing 6s ease infinite;
+    -moz-animation: swing 6s ease infinite;
+    -ms-animation: swing 6s ease infinite;
+    -o-animation: swing 6s ease infinite;
+    animation: swing 6s ease infinite
+}
+
+.game-description svg#cool-anim-2 line:nth-of-type(5) {
+    -webkit-animation: swing 7.5s ease infinite;
+    -moz-animation: swing 7.5s ease infinite;
+    -ms-animation: swing 7.5s ease infinite;
+    -o-animation: swing 7.5s ease infinite;
+    animation: swing 7.5s ease infinite
+}
+
+.game-description svg#cool-anim-2 line:nth-of-type(6) {
+    -webkit-animation: swing 9s ease infinite;
+    -moz-animation: swing 9s ease infinite;
+    -ms-animation: swing 9s ease infinite;
+    -o-animation: swing 9s ease infinite;
+    animation: swing 9s ease infinite
+}
+
+.game-description svg#cool-anim-2 line:nth-of-type(7) {
+    -webkit-animation: swing 10.5s ease infinite;
+    -moz-animation: swing 10.5s ease infinite;
+    -ms-animation: swing 10.5s ease infinite;
+    -o-animation: swing 10.5s ease infinite;
+    animation: swing 10.5s ease infinite
+}
+
+.game-description svg#cool-anim-2 line:nth-of-type(8) {
+    -webkit-animation: swing 12s ease infinite;
+    -moz-animation: swing 12s ease infinite;
+    -ms-animation: swing 12s ease infinite;
+    -o-animation: swing 12s ease infinite;
+    animation: swing 12s ease infinite
+}
+
+.game-description svg#cool-anim-2 line:nth-of-type(9) {
+    -webkit-animation: swing 23.5s ease infinite;
+    -moz-animation: swing 23.5s ease infinite;
+    -ms-animation: swing 23.5s ease infinite;
+    -o-animation: swing 23.5s ease infinite;
+    animation: swing 23.5s ease infinite
+}
+
+.game-description svg#cool-anim-2 line:nth-of-type(10) {
+    -webkit-animation: swing 15s ease infinite;
+    -moz-animation: swing 15s ease infinite;
+    -ms-animation: swing 15s ease infinite;
+    -o-animation: swing 15s ease infinite;
+    animation: swing 15s ease infinite
+}
+
+.game-description svg#cool-anim-2 line:nth-of-type(11) {
+    -webkit-animation: swing 16.5s ease infinite;
+    -moz-animation: swing 16.5s ease infinite;
+    -ms-animation: swing 16.5s ease infinite;
+    -o-animation: swing 16.5s ease infinite;
+    animation: swing 16.5s ease infinite
+}
+
+.game-description svg#cool-anim-2 line:nth-of-type(12) {
+    -webkit-animation: swing 18s ease infinite;
+    -moz-animation: swing 18s ease infinite;
+    -ms-animation: swing 18s ease infinite;
+    -o-animation: swing 18s ease infinite;
+    animation: swing 18s ease infinite
+}
+
+.game-description svg#cool-anim-2 line:nth-of-type(13) {
+    -webkit-animation: swing 19.5s ease infinite;
+    -moz-animation: swing 19.5s ease infinite;
+    -ms-animation: swing 19.5s ease infinite;
+    -o-animation: swing 19.5s ease infinite;
+    animation: swing 19.5s ease infinite
+}
+
+.game-description svg#cool-anim-2 line:nth-of-type(14) {
+    -webkit-animation: swing 21s ease infinite;
+    -moz-animation: swing 21s ease infinite;
+    -ms-animation: swing 21s ease infinite;
+    -o-animation: swing 21s ease infinite;
+    animation: swing 21s ease infinite
+}
+
+#cool-anim-2 {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+
+
+
+@-webkit-keyframes dash {
+  0% {
+    stroke-dashoffset: 0
+  }
+
+  100% {
+    stroke-dashoffset: 120
+  }
+}
+
+@keyframes dash {
+  0% {
+    stroke-dashoffset: 0
+  }
+
+  100% {
+    stroke-dashoffset: 120
+  }
+}
+
+.game-description svg#fashion-gfx polyline {
+  -webkit-animation: dash 5s linear infinite;
+  -moz-animation: dash 5s linear infinite;
+  -ms-animation: dash 5s linear infinite;
+  -o-animation: dash 5s linear infinite;
+  animation: dash 5s linear infinite;
+}
+
+
+@-webkit-keyframes rotate {
+  0% {
+    -moz-transform: rotate(0deg) scale(1);
+    -ms-transform: rotate(0deg) scale(1);
+    -webkit-transform: rotate(0deg) scale(1);
+    transform: rotate(0deg) scale(1)
+  }
+
+  50% {
+    -moz-transform: rotate(180deg) scale(0.8);
+    -ms-transform: rotate(180deg) scale(0.8);
+    -webkit-transform: rotate(180deg) scale(0.8);
+    transform: rotate(180deg) scale(0.8)
+  }
+
+  100% {
+    -moz-transform: rotate(360deg) scale(1);
+    -ms-transform: rotate(360deg) scale(1);
+    -webkit-transform: rotate(360deg) scale(1);
+    transform: rotate(360deg) scale(1)
+  }
+}
+
+@keyframes rotate {
+  0% {
+    -moz-transform: rotate(0deg) scale(1);
+    -ms-transform: rotate(0deg) scale(1);
+    -webkit-transform: rotate(0deg) scale(1);
+    transform: rotate(0deg) scale(1)
+  }
+
+  50% {
+    -moz-transform: rotate(180deg) scale(0.8);
+    -ms-transform: rotate(180deg) scale(0.8);
+    -webkit-transform: rotate(180deg) scale(0.8);
+    transform: rotate(180deg) scale(0.8)
+  }
+
+  100% {
+    -moz-transform: rotate(360deg) scale(1);
+    -ms-transform: rotate(360deg) scale(1);
+    -webkit-transform: rotate(360deg) scale(1);
+    transform: rotate(360deg) scale(1)
+  }
+}
+
+.game-description svg#cool-anim-3 .gfx-arrowline:nth-of-type(1) {
+  -webkit-animation: rotate 20s linear infinite;
+  -moz-animation: rotate 20s linear infinite;
+  -ms-animation: rotate 20s linear infinite;
+  -o-animation: rotate 20s linear infinite;
+  animation: rotate 20s linear infinite
+}
+
+.game-description svg#cool-anim-3 .gfx-arrowline:nth-of-type(2) {
+  -webkit-animation: rotate 40s linear infinite;
+  -moz-animation: rotate 40s linear infinite;
+  -ms-animation: rotate 40s linear infinite;
+  -o-animation: rotate 40s linear infinite;
+  animation: rotate 40s linear infinite
+}
+
+.game-description svg#cool-anim-3 .gfx-arrowline:nth-of-type(3) {
+  -webkit-animation: rotate 60s linear infinite;
+  -moz-animation: rotate 60s linear infinite;
+  -ms-animation: rotate 60s linear infinite;
+  -o-animation: rotate 60s linear infinite;
+  animation: rotate 60s linear infinite
+}
+
+.game-description svg#cool-anim-3 .gfx-arrowline:nth-of-type(4) {
+  -webkit-animation: rotate 80s linear infinite;
+  -moz-animation: rotate 80s linear infinite;
+  -ms-animation: rotate 80s linear infinite;
+  -o-animation: rotate 80s linear infinite;
+  animation: rotate 80s linear infinite
+}
+
+.game-description svg#cool-anim-3 .gfx-arrowline:nth-of-type(5) {
+  -webkit-animation: rotate 100s linear infinite;
+  -moz-animation: rotate 100s linear infinite;
+  -ms-animation: rotate 100s linear infinite;
+  -o-animation: rotate 100s linear infinite;
+  animation: rotate 100s linear infinite
+}
+
+#cool-anim-3 {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+
+/*** KeyFrames ***/
 
 /* Main */
 .main {
@@ -170,6 +983,30 @@ h2 {
 
 .list-games {
   text-align: center;
+
+  .anim-wrap {
+    position: relative;
+
+    .gfx-triangle {
+      fill: rgb(26, 26, 26); 
+      stroke: rgb(255, 255, 255); 
+      stroke-miterlimit: 10; 
+      transform-origin: 280px 280px 0px;
+      transform: matrix(0, 0, 0, 0, 0, 0);
+      -webkit-transition: all 1s ;
+      -moz-transition: all 1s ;
+      -o-transition: all 1s ;
+      transition: all 1s ;
+    }
+
+    .anim-descr {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+
   li:nth-child(odd) {
     margin-top: 50px;
   }
@@ -178,41 +1015,15 @@ h2 {
     display: inline-block;
     vertical-align: top;
     width: 33%;
-    h2 {
-      margin-bottom: 40px;
-    }
-    .circle {
-      position: relative;
-      strong {
-        position: absolute;
-        left: 0;
-        right: 0;
-        top: 40%;
-        font-size: 38px;
-        background: -webkit-linear-gradient(#d22b1f, #f89b2d);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-      }
-    }
     .game-description {
+      position: relative;
       margin-top: 40px;
-      padding: 25px;
-      border: 3px solid #212020;
+      border: 3px dashed black;
       -webkit-transition: all 1s ;
       -moz-transition: all 1s ;
       -o-transition: all 1s ;
       transition: all 1s ;
-      p {
-        line-height: 25px;
-      }
-      .btn {
-        background: -webkit-linear-gradient( green, yellow );
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        font-weight: bold;
-        border: 2px solid greenyellow;
-        color: black;
-      }
+
       &:hover {
         position: relative;
         z-index: 2;
@@ -224,17 +1035,42 @@ h2 {
         border-image-source: linear-gradient(to right bottom, yellow, green);
         border-image-slice: 1;
         background-color: rgba(0, 0, 0, 0.8);
+
+        .anim-hover {
+          stroke-width: 2px;
+        }
+
+        .anim-wrap .gfx-triangle {
+          -webkit-transition: all 1s ;
+          -moz-transition: all 1s ;
+          -o-transition: all 1s ;
+          transition: all 1s ;
+          transform: matrix(1, 0, 0, 1, 0, 0);
+        }
+        
         .btn {
-          background: linear-gradient(to bottom right, green, yellow);      
-          -webkit-text-fill-color: inherit;
+          border: 2px solid greenyellow;
+          -webkit-box-shadow: 0px 4px 71px 2px rgba(13,255,0,1);
+          -moz-box-shadow: 0px 4px 71px 2px rgba(13,255,0,1);
+          box-shadow: 0px 4px 71px 2px rgba(13,255,0,1);
           &:hover {
-            background: linear-gradient(to bottom right, rgb(194, 23, 47), #1318be);
+            -webkit-box-shadow: 0px 4px 71px 2px red;
+            -moz-box-shadow: 0px 4px 71px 2px red;
+            box-shadow: 0px 4px 71px 2px red;
           }
         }
+      }
+
+      .start-play {
+        line-height: 25px;
+        padding: 25px;
+        padding-top: 0;
       }
     }
   }
 }
+
+/*  */
 
 /* RouleTTe */
 
@@ -245,12 +1081,14 @@ h2 {
 }
 
 .statistic {
+  border-radius: 120px;
   margin-top: 60px;
   background: rgba(0, 0, 0, 0.22);
   padding: 70px 0;
-  -webkit-box-shadow: inset 0px 4px 71px 2px rgba(13,255,0,1);
+  border: 3px dashed yellowgreen;
+/*   -webkit-box-shadow: inset 0px 4px 71px 2px rgba(13,255,0,1);
 -moz-box-shadow: inset 0px 4px 71px 2px rgba(13,255,0,1);
-box-shadow: inset 0px 4px 71px 2px rgba(13,255,0,1);
+box-shadow: inset 0px 4px 71px 2px rgba(13,255,0,1); */
   @extend .list-games;
   li:nth-child(odd) {
     margin-top: 50px;
@@ -290,22 +1128,252 @@ box-shadow: inset 0px 4px 71px 2px rgba(13,255,0,1);
 }
 
 .live-line {
+  position: relative;
+  height: 130px;
   border: 2px solid #30343e;
   border-image-source: linear-gradient(to right, yellow, green);
   border-image-slice: 1;
   background: rgba(0, 0, 0, 0.22);
+  margin-bottom: 75px;
   h3 {
-    border: 3px solid black;
+    position: absolute;
+    bottom: 41px;
+    left: -41px;
+    display: inline-block;
+    border: 3px solid;
     letter-spacing: 4px;
-    -moz-transform: rotate(180deg);
-    -webkit-transform: rotate(180deg);
-    -o-transform: rotate(180deg);
-    transform: rotate(180deg);
-    writing-mode: tb-rl;
+    width: 130px;
+    // -moz-transform: rotate(180deg);
+    // -webkit-transform: rotate(180deg);
+    // -o-transform: rotate(180deg);
+    transform: rotate(-90deg);
+    // writing-mode: tb-rl;
     margin: 0;
+    text-align: center;
     border-image-source: linear-gradient(to right bottom, yellow, red);
     border-image-slice: 1;
-    padding: 30px 5px;
+    padding: 10px 5px;
+    box-sizing: border-box;
+  }
+
+  .live-list {
+    height: 100%;
+    vertical-align: top;
+    padding-left: 55px;
+    box-sizing: border-box;
+    overflow: hidden;
+    li {
+      text-align: center;
+      display: inline-block;
+      vertical-align: top;
+      width: 130px;
+      height: 130px;
+      box-sizing: border-box;
+      img {
+        width: 100%;
+      }
+    }
+  }
+}
+
+/* Profile */
+
+#profile {
+  h2, h3, h4 {
+    margin-top: 0;
+  }
+  .photo-id {
+    width: 30%;
+    vertical-align: top;
+    display: inline-block;
+    .photo {
+      max-width: 250px;
+      width: 100%;
+      height: 250px;
+      overflow: hidden;
+      margin: auto;
+      border: 3px solid green;
+      border-radius: 50px;
+    }
+    img {
+      max-width: 100%;
+    }
+    .btn {
+      display: block;
+      margin: auto;
+      margin-top: 10px;
+      border-radius: 10px;
+      border: 3px dashed green;
+      &:hover {
+        border: 3px solid greenyellow;
+        border-radius: 50px;
+      }
+    }
+  }
+  .short-space {
+    padding: 30px 50px;
+  }
+  .short-statistic {
+    display: inline-block;
+    width: 65%;
+    margin-left: 5%;
+    h2 {
+      margin-bottom: 35px;
+    }
+    .btn {
+      display: block;
+      width: 100%;
+      box-sizing: border-box;
+      margin-bottom: 35px;
+      padding: 10px;
+      border-radius: 3px;
+      text-decoration: none;
+      &:hover {     
+        border-radius: 15px;
+      }
+    }
+  }
+  .tabs-toggle {
+    &>ul {
+      display: inline-block;
+      vertical-align: top;
+      width: 20%;
+      margin-right: 3%
+    }
+    .tabs-list {
+      position: relative;
+      width: 75%;
+      display: inline-block;
+      div {
+        position: absolute;
+        top: -15px;
+        width: 100%;
+        -webkit-transition: box-shadow 1s ;
+        -moz-transition: box-shadow 1s ;
+        -o-transition: box-shadow 1s ;
+        transition: box-shadow 1s ;
+        border: 2px solid #30343e;
+        border-image-source: linear-gradient(to left, yellow, green);
+        border-image-slice: 1;
+        &.highlight {
+          -webkit-box-shadow: 0px 0px 53px 6px rgba(0,255,60,1);
+          -moz-box-shadow: 0px 0px 53px 6px rgba(0,255,60,1);
+          box-shadow: 0px 0px 53px 6px rgba(0,255,60,1);
+        }
+      }
+    }
+  }
+  .tab-2, .tab-3 {
+    display: none;
+  }
+  .tab-1, .tab-2, .tab-3 {
+    -webkit-transition: box-shadow 1s ;
+    -moz-transition: box-shadow 1s ;
+    -o-transition: box-shadow 1s ;
+    transition: box-shadow 1s ;
+    &.highlight {
+      -webkit-box-shadow: 0px 0px 53px 6px rgba(0,255,60,1);
+      -moz-box-shadow: 0px 0px 53px 6px rgba(0,255,60,1);
+      box-shadow: 0px 0px 53px 6px rgba(0,255,60,1);
+    }
+  }
+  .center-info {
+    h4 {
+      text-transform: inherit;
+    }
+    .btn {
+      position: relative;
+      display: block;
+      max-width: 270px;
+      width: 100%;
+      margin-left: auto;
+      margin-right: auto;
+      border-radius: 10px;
+      border: 3px solid green;
+      i {
+        position: absolute;
+        display: none;
+        left: 50px;
+        font-size: 20px;
+      }
+      &:first-child {
+        margin-bottom: 20px;
+      }
+      &:hover {
+        border: 3px dotted greenyellow;
+        border-radius: 50px;
+        color: greenyellow;
+        i {
+          display: block;
+        }
+      }
+    }
+    .money-operations, .referals {
+      display: inline-block;
+      vertical-align: top;
+    }
+    .money-operations {
+      width: 30%;
+    }
+    .referals {
+      position: relative;
+      top: -50px;
+      width: 70%;
+    }
+    .referals-block {
+      display: inline-block;
+      width: 50%;
+      float: left;
+    }
+    form {
+      background: #1c1d21;
+      margin: 0 5px;
+      padding: 15px;
+      border-radius: 10px;
+      -moz-border-radius: 10px;
+      -webkit-border-radius: 10px;
+      label {
+        display: block;
+      }
+      p {
+        margin: 10px 0;
+        font-size: 13px;
+        letter-spacing: 1px;
+        line-height: 18px;
+        span {
+          color: greenyellow;
+        }
+      }
+      h4 {
+        margin-bottom: 0;
+      }
+      input {
+        border: 2px solid green;  
+        background: #101321;
+        background: rgb(41, 46, 71);
+        background: rgba(0, 0, 0, 0.1);
+        border-radius: 5px;
+        -moz-border-radius: 5px;
+        -webkit-border-radius: 5px;
+        color: #fff;
+        text-align: center;
+        -webkit-transition: all .5s ;
+        -moz-transition: all .5s ;
+        -o-transition: all .5s ;
+        transition: all .5s ;
+        padding: 10px;
+        &:focus, &:hover {
+          outline: none;
+          border: 2px dotted greenyellow;
+        }
+      }
+    }
+  }
+
+  .bottom-info .tab-history {
+    p {
+      padding: 25px;
+    }
   }
 }
 
@@ -315,7 +1383,20 @@ box-shadow: inset 0px 4px 71px 2px rgba(13,255,0,1);
     position: relative;
     padding: 50px 85px;
     background: #30343e;
-    z-index: 2; 
+    font-size: 14px;
+    // z-index: 2; 
+  }
+
+  .copyright {
+    // float: left;
+    display: inline-block;
+  }
+
+  .pay-types {
+    float: right;
+    display: inline-block;
   }
 }
+
+
 /* Media */
